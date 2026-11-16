@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>احجز طاولة · جمرة</title>
+  <meta name="description" content="احجز طاولتك في أي فرع من فروع جمرة في دقيقة.">
+  <meta name="theme-color" content="#1a0709">
+  <script>document.documentElement.classList.add('page-enter')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="reserve">
+
+<header class="page-hero short" style="--bg:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&q=80&auto=format&fit=crop')">
+  <canvas class="embers" aria-hidden="true"></canvas>
+  <div class="container page-hero-inner">
+    <nav class="crumbs" aria-label="مسار الصفحة"><a href="index.html">الرئيسية</a><span aria-hidden="true">/</span><span aria-current="page">احجز طاولة</span></nav>
+    <h1 class="reveal">احجز طاولتك <em>جنب النار</em></h1>
+    <p class="reveal" style="--d:.1s">٣ خطوات وتبقى طاولتك جاهزة. هنبعتلك تأكيد على الجوال.</p>
+  </div>
+  <svg class="divider-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64c120 32 260 52 420 30S700 10 880 20s300 70 420 66c60-2 110-14 140-22v56H0z" fill="var(--coal)"/></svg>
+</header>
+
+<main id="main" class="page-main">
+  <div class="container reserve-layout">
+    <form class="reserve-form glass" id="reserveForm" novalidate>
+      <section class="r-step">
+        <h2><span class="step-no">١</span> الفرع والتاريخ</h2>
+        <div class="r-split">
+          <div>
+            <span class="field-label">الفرع</span>
+            <div class="branch-pick stack" id="branchPick" role="radiogroup" aria-label="الفرع"></div>
+          </div>
+          <div>
+            <span class="field-label">التاريخ</span>
+            <div class="fp-wrap"><input id="datePicker" aria-label="التاريخ" readonly></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-step">
+        <h2><span class="step-no">٢</span> العدد والمكان والوقت</h2>
+        <div class="r-row">
+          <div class="field">
+            <span class="field-label">عدد الأشخاص</span>
+            <div class="stepper" aria-label="عدد الأشخاص">
+              <button type="button" id="gPlus" aria-label="زوّد"><svg><use href="#i-plus"/></svg></button>
+              <output id="guests">٢</output>
+              <button type="button" id="gMinus" aria-label="قلّل"><svg><use href="#i-minus"/></svg></button>
+            </div>
+            <small class="hint">أكتر من ١٢ شخص؟ <a href="contact.html">كلمنا</a></small>
+          </div>
+          <div class="field">
+            <span class="field-label">مكان الجلسة</span>
+            <div class="seg" role="radiogroup" aria-label="مكان الجلسة">
+              <label><input type="radio" name="area" value="داخلي" checked><span>داخلي</span></label>
+              <label><input type="radio" name="area" value="عائلي"><span>عائلي</span></label>
+              <label><input type="radio" name="area" value="خارجي"><span>خارجي</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="field time-field">
+          <span class="field-label">الوقت</span>
+          <div class="time-input"><svg><use href="#i-clock"/></svg><input id="timePicker" placeholder="اختار الساعة" aria-label="الوقت" readonly></div>
+          <small class="hint" id="timeHint"></small>
+        </div>
+      </section>
+
+      <section class="r-step">
+        <h2><span class="step-no">٣</span> بياناتك</h2>
+        <div class="field-row">
+          <label class="field">الاسم<input name="name" autocomplete="name" required placeholder="اسمك"></label>
+          <label class="field">رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="05xxxxxxxx" dir="ltr"></label>
+        </div>
+        <div class="field-row">
+          <label class="field">المناسبة
+            <select name="occasion">
+              <option value="">من غير مناسبة</option>
+              <option>عيد ميلاد</option>
+              <option>ذكرى سنوية</option>
+              <option>اجتماع عمل</option>
+              <option>تجمع عائلي</option>
+            </select>
+          </label>
+          <label class="field">ملاحظات<input name="notes" placeholder="مثلاً: كرسي أطفال"></label>
+        </div>
+        <p class="form-error" id="rError" role="alert"></p>
+        <button type="submit" class="btn-order wide"><span>أكّد الحجز</span><svg><use href="#i-check"/></svg></button>
+      </section>
+    </form>
+
+    <aside class="ticket" id="ticket" aria-live="polite">
+      <div class="ticket-head"><svg class="brand-mark"><use href="#logo-mark"/></svg><b>تذكرة الحجز</b></div>
+      <dl id="ticketBody"></dl>
+      <div class="barcode" aria-hidden="true"></div>
+      <small>الحجز بيتمسك ١٥ دقيقة بعد الميعاد</small>
+    </aside>
+  </div>
+</main>
+
+<div class="modal" id="doneModal" hidden>
+  <div class="modal-card glass-strong" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+    <div class="done-badge"><svg><use href="#i-check"/></svg></div>
+    <h2 id="doneTitle">الحجز اتأكد!</h2>
+    <p>كود الحجز <b id="bookCode" dir="ltr"></b> — هنبعتلك رسالة على الجوال قبل الميعاد بساعة.</p>
+    <dl class="modal-sum" id="doneSum"></dl>
+    <div class="modal-actions">
+      <a href="menu.html" class="btn-order"><span>شوف المنيو</span><svg><use href="#i-arrow"/></svg></a>
+      <a href="index.html" class="btn-ghost">الرئيسية</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/ar.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/reserve.js"></script>
+</body>
+</html>

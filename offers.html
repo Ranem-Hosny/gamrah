@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>العروض والكوبونات · جمرة</title>
+  <meta name="description" content="عروض جمرة الأسبوعية وكوبونات الخصم.">
+  <meta name="theme-color" content="#1a0709">
+  <script>document.documentElement.classList.add('page-enter')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="offers">
+
+<header class="page-hero" style="--bg:url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1800&q=80&auto=format&fit=crop')">
+  <canvas class="embers" aria-hidden="true"></canvas>
+  <div class="container page-hero-inner">
+    <nav class="crumbs" aria-label="مسار الصفحة"><a href="index.html">الرئيسية</a><span aria-hidden="true">/</span><span aria-current="page">العروض</span></nav>
+    <h1 class="reveal">عروض <em>تولّع</em> الأسبوع</h1>
+    <p class="reveal" style="--d:.1s">العروض بتتجدد كل يوم الساعة ١٢ بالليل. وكمان عندك كوبونات تقدر تستخدمها وقت الدفع.</p>
+    <div class="countdown glass reveal" style="--d:.2s" aria-label="الوقت الباقي على عروض النهارده">
+      <small>عروض النهارده بتخلص بعد</small>
+      <div class="cd-digits"><span><b data-cd="h">00</b><i>ساعة</i></span><span><b data-cd="m">00</b><i>دقيقة</i></span><span><b data-cd="s">00</b><i>ثانية</i></span></div>
+    </div>
+  </div>
+  <svg class="divider-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64c120 32 260 52 420 30S700 10 880 20s300 70 420 66c60-2 110-14 140-22v56H0z" fill="var(--coal)"/></svg>
+</header>
+
+<main id="main" class="page-main">
+  <section class="container">
+    <div class="offer-grid" id="offerGrid"></div>
+  </section>
+
+  <section class="container coupons-sec">
+    <header class="section-head">
+      <span class="eyebrow reveal">كوبونات</span>
+      <h2 class="reveal">انسخ الكود <em>واستخدمه</em> في الدفع</h2>
+      <p class="reveal">دوس "استخدم الكوبون" وهيتطبق لوحده في صفحة إتمام الطلب.</p>
+    </header>
+    <div class="coupon-grid" id="couponGrid"></div>
+  </section>
+
+  <section class="container terms reveal">
+    <h3>شروط العروض</h3>
+    <ul>
+      <li>العروض متاحة للتوصيل والاستلام من الفرع، ومش بتتجمع مع بعض.</li>
+      <li>كوبون واحد بس لكل طلب.</li>
+      <li>الأسعار شاملة ضريبة القيمة المضافة ١٥٪.</li>
+      <li>جمرة من حقها توقف أي عرض من غير إشعار مسبق.</li>
+    </ul>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/offers.js"></script>
+</body>
+</html>

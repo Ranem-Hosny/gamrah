@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تواصل معانا · جمرة</title>
+  <meta name="description" content="كلّم جمرة: اقتراحات، شكاوى، مناسبات وكاترينج، والأسئلة الشائعة.">
+  <meta name="theme-color" content="#1a0709">
+  <script>document.documentElement.classList.add('page-enter')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="contact">
+
+<main id="main" class="cx">
+  <!-- ============ HERO: intro + live chat ============ -->
+  <section class="cx-hero">
+    <canvas class="embers" aria-hidden="true"></canvas>
+    <div class="cx-glow" aria-hidden="true"></div>
+    <div class="container cx-grid">
+      <div class="cx-intro">
+        <nav class="crumbs" aria-label="مسار الصفحة"><a href="index.html">الرئيسية</a><span aria-hidden="true">/</span><span aria-current="page">تواصل</span></nav>
+        <h1 class="reveal">كلّمنا زي ما <em>بتكلم صاحبك</em></h1>
+        <p class="reveal" style="--d:.08s">اقتراح، شكوى، أو عزومة كبيرة محتاج لها أكل؟ ابعتلنا في الشات، أو اختار الطريقة اللي تريحك.</p>
+        <div class="cx-status reveal" style="--d:.12s" id="cxStatus"></div>
+        <a class="text-link cx-formlink reveal" style="--d:.14s" href="#form">أو املا فورم التواصل ↓</a>
+
+        <div class="cx-tiles">
+          <a class="cx-tile reveal" style="--d:.16s" href="tel:+966115550199">
+            <span class="cx-ico"><svg><use href="#i-phone"/></svg></span>
+            <b>اتصل بينا</b><small dir="ltr">+966 11 555 0199</small>
+            <svg class="cx-arrow"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="cx-tile reveal" style="--d:.2s" href="https://wa.me/966115550199" target="_blank" rel="noopener">
+            <span class="cx-ico wa"><svg><use href="#i-chat"/></svg></span>
+            <b>واتساب</b><small>رد خلال دقايق</small>
+            <svg class="cx-arrow"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="cx-tile reveal" style="--d:.24s" href="mailto:hello@jamra-kitchen.sa">
+            <span class="cx-ico"><svg><use href="#i-mail"/></svg></span>
+            <b>إيميل</b><small dir="ltr">hello@jamra-kitchen.sa</small>
+            <svg class="cx-arrow"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="cx-tile reveal" style="--d:.28s" href="branches.html">
+            <span class="cx-ico"><svg><use href="#i-pin"/></svg></span>
+            <b>زورنا</b><small>٤ فروع في المملكة</small>
+            <svg class="cx-arrow"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- chat -->
+      <div class="chat reveal" style="--d:.1s" aria-label="محادثة مع فريق جمرة">
+        <header class="chat-head">
+          <span class="chat-av"><svg><use href="#logo-mark"/></svg></span>
+          <div><b>فريق جمرة</b><small><i class="live-dot"></i> متصلين دلوقتي</small></div>
+          <button class="icon-btn" id="chatRestart" aria-label="ابدأ من الأول" title="ابدأ من الأول"><svg><use href="#i-close"/></svg></button>
+        </header>
+        <div class="chat-body" id="chatBody" role="log" aria-live="polite"></div>
+        <div class="chat-quick" id="chatQuick"></div>
+        <form class="chat-input" id="chatForm" autocomplete="off">
+          <textarea id="chatText" rows="1" placeholder="اكتب هنا…" aria-label="رسالتك"></textarea>
+          <button class="chat-send" aria-label="ابعت"><svg><use href="#i-arrow"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM + SOCIAL ============ -->
+  <section class="container cx-form-sec" id="form">
+    <div class="cx-form-grid">
+      <form class="cx-form glass reveal" id="contactForm" novalidate>
+        <span class="eyebrow">فورم التواصل</span>
+        <h2>ابعتلنا <em>رسالة مفصّلة</em></h2>
+        <p class="muted">لو عايز تكتب براحتك أو تبعت تفاصيل كتير، املا الفورم ده وهنرد عليك خلال يوم عمل.</p>
+        <div class="field-row">
+          <label class="field">الاسم <span class="req">*</span><input name="name" autocomplete="name" placeholder="اسمك بالكامل"></label>
+          <label class="field">رقم الجوال <span class="req">*</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr"></label>
+        </div>
+        <div class="field-row">
+          <label class="field">الإيميل <small class="opt">(اختياري)</small><input name="email" type="email" autocomplete="email" placeholder="name@example.com" dir="ltr"></label>
+          <label class="field">الفرع <small class="opt">(اختياري)</small>
+            <select name="branch" id="formBranch"><option value="">أي فرع</option></select>
+          </label>
+        </div>
+        <fieldset class="topic-pills">
+          <legend class="field-label">الموضوع <span class="req">*</span></legend>
+          <label><input type="radio" name="topic" value="اقتراح" checked><span>💡 اقتراح</span></label>
+          <label><input type="radio" name="topic" value="شكوى"><span>⚠️ شكوى</span></label>
+          <label><input type="radio" name="topic" value="مناسبة / كاترينج"><span>🎉 مناسبة</span></label>
+          <label><input type="radio" name="topic" value="شراكة"><span>🤝 شراكة</span></label>
+          <label><input type="radio" name="topic" value="توظيف"><span>👨‍🍳 توظيف</span></label>
+        </fieldset>
+        <label class="field">الرسالة <span class="req">*</span>
+          <textarea name="msg" rows="5" maxlength="600" placeholder="اكتب رسالتك هنا…"></textarea>
+          <small class="char-count" id="charCount">٠ / ٦٠٠</small>
+        </label>
+        <p class="form-error" id="cError" role="alert"></p>
+        <button type="submit" class="btn-order wide"><span>ابعت الرسالة</span><svg><use href="#i-arrow"/></svg></button>
+
+        <div class="form-done" id="cDone" hidden>
+          <div class="done-badge"><svg><use href="#i-check"/></svg></div>
+          <h3>وصلتنا رسالتك</h3>
+          <p>رقم المتابعة <b id="cTicket" dir="ltr"></b> — هنرد عليك على الجوال خلال يوم عمل.</p>
+          <button type="button" class="btn-ghost" id="cAgain">ابعت رسالة تانية</button>
+        </div>
+      </form>
+
+      <aside class="cx-social reveal" style="--d:.08s">
+        <span class="eyebrow">تابعنا</span>
+        <h2>إحنا <em>على السوشيال</em></h2>
+        <p class="muted">أكلات جديدة، عروض قبل أي حد، ولقطات من ورا الشواية.</p>
+        <div class="social-grid" id="socialGrid"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="container cx-faq">
+    <header class="section-head">
+      <span class="eyebrow reveal">قبل ما تسأل</span>
+      <h2 class="reveal">أسئلة <em>بتتسأل كتير</em></h2>
+    </header>
+    <div class="faq-cards" id="faqList"></div>
+  </section>
+
+  <!-- ============ BRANCHES STRIP ============ -->
+  <section class="container cx-branches">
+    <header class="section-head">
+      <span class="eyebrow reveal">أو تعالى بنفسك</span>
+      <h2 class="reveal">أقرب فرع <em>ليك</em></h2>
+    </header>
+    <div class="cx-branch-list" id="cxBranches"></div>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
